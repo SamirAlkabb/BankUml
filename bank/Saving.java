@@ -1,17 +1,23 @@
-package bank;
-
 public class Saving extends Account {
+
     public Saving(Customer customer) {
         super(customer);
     }
-    public void title(){
-        System.out.println("**Payments**");
-    };
+
+    public Saving(Customer customer,
+                  String accountNumber,
+                  double openingBalance) {
+        super(customer, accountNumber, "SAVING", openingBalance);
+    }
+
+    private void title() {
+        System.out.println("**Savings Payment**");
+    }
 
     @Override
     public void pay() {
         title();
-        System.out.println("Payment From saving account For: " + customer.getName());
+        System.out.println("Payment from saving account for: " + customer.getName());
     }
 
     @Override
