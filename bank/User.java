@@ -60,4 +60,18 @@ public class User {
     public List<Account> getAccounts() {
         return Collections.unmodifiableList(accounts);
     }
+
+      public double viewBalance() {
+        return balance;
+    }
+
+    public boolean requestTransaction(Transactions txn, double amount) {
+        return txn.processTransaction(this, amount);
+    }
+
+   
+
+  
+}
+
 }
