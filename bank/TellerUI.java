@@ -27,4 +27,9 @@ public class TellerUI {
                     + " balance=" + a.getBalance());
         }
     }
+
+     public Permissions getPermissions() {
+        return tellerPerms;
+    }
+
 }
