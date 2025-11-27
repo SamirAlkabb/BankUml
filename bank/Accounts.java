@@ -28,6 +28,13 @@ public class Accounts {
         }
     }
 
+
+    public void removeUser(User user) {
+        users.remove(user);
+    }
+
+
+
     public List<User> getUsers() {
         return Collections.unmodifiableList(users);
     }
