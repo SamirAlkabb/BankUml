@@ -13,6 +13,12 @@ public class Permissions {
     public String getUsername() {
         return username;
     }
+    
+ public boolean hasPermission(String requiredPerm) {
+        return perms != null && perms.contains(requiredPerm);
+    }
+
+   
 
     public String getPassword() {
         return password;
@@ -29,6 +35,7 @@ public class Permissions {
             default: return Role.CUSTOMER;
         }
     }
+    
 
     public boolean isCustomer() { return getRole() == Role.CUSTOMER; }
     public boolean isTeller()   { return getRole() == Role.TELLER; }
