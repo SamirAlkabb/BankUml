@@ -2,26 +2,20 @@ public class Check extends Account {
 
     public Check(Customer customer) {
         super(customer);
+        this.accountType = "CHECK";
     }
 
-    public Check(Customer customer,
-                 String accountNumber,
-                 double openingBalance) {
+    public Check(Customer customer, String accountNumber, double openingBalance) {
         super(customer, accountNumber, "CHECK", openingBalance);
-    }
-
-    private void title() {
-        System.out.println("**Check Payment**");
     }
 
     @Override
     public void pay() {
-        title();
-        System.out.println("Check payment for customer: " + customer.getName());
+        // Behavior handled by Transaction/Service layer according to the report
     }
 
     @Override
     public void receipt() {
-        System.out.println("Check receipt for customer: " + customer.getName());
+        // Behavior handled by Transaction/Service layer according to the report
     }
 }
