@@ -18,4 +18,9 @@
         </dependency>
     </dependencies>
     
+    <build>
+        <!-- Treat the top-level 'bank' folder as the Java source directory -->
+        <sourceDirectory>${project.basedir}/bank</sourceDirectory>
+    </build>
+    
 </project>

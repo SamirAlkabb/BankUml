@@ -15,7 +15,17 @@ public class Permissions {
     }
     
  public boolean hasPermission(String requiredPerm) {
-        return perms != null && perms.contains(requiredPerm);
+        if (requiredPerm == null) return false;
+        // Simple permission mapping based on role integer
+        switch (requiredPerm) {
+            case "ADD_USER":
+            case "REMOVE_USER":
+                return isAdmin();
+            case "SEARCH_ACCOUNTS":
+                return isTeller() || isAdmin();
+            default:
+                return false;
+        }
     }
 
    

@@ -12,6 +12,7 @@ public class DataStore {
 
     private final List<Account> accounts = new ArrayList<>();
     private final List<Transaction> transactions = new ArrayList<>();
+    private final List<User> users = new ArrayList<>();
 
     public void addAccount(Account account) {
         if (account != null) {
@@ -23,6 +24,20 @@ public class DataStore {
         if (transaction != null) {
             transactions.add(transaction);
         }
+    }
+
+    public void saveTransaction(Transaction transaction) {
+        addTransaction(transaction);
+    }
+
+    public void addUser(User user) {
+        if (user != null) {
+            users.add(user);
+        }
+    }
+
+    public List<User> getAllUsers() {
+        return Collections.unmodifiableList(users);
     }
 
     public List<Account> getAccounts() {
